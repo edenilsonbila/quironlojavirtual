@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Quiron.LojaVirtual.Dominio.Entidades
 {
-    class Produto
+   public class Produto
     {
         public int ProdutoID { get; set; }
 

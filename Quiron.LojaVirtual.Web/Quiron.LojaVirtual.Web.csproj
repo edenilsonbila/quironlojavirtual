@@ -116,6 +116,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\Vitrine\ListaProdutos.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +128,7 @@
     </Compile>
     <Compile Include="HtmlHelpers\PaginacaoHelpers.cs" />
     <Compile Include="Models\Paginacao.cs" />
+    <Compile Include="Models\ProdutosViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,7 +138,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Vitrine\ListaProdutos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

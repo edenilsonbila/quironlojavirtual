@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Quiron.LojaVirtual.Web.Models;
 
+
 namespace Quiron.LojaVirtual.Web.HtmlHelpers
 {
     public static class PaginacaoHelpers
@@ -14,13 +15,13 @@ namespace Quiron.LojaVirtual.Web.HtmlHelpers
         {
             StringBuilder resultado = new StringBuilder();
 
-            for (int i = 0; i < paginacao.totalPagina; i++)
+            for (int i = 1; i <= paginacao.totalPagina; i++)
             {
                 //TagBuilder cria uma nova TAG HTML ex: <div> <a> etc...
                 TagBuilder tag = new TagBuilder("a");
 
                 //MargeAttributes atribui um atributo a tag acima, Neste caso seria <a href="paginaUrl"><a> onde paginaUrl recebe o valor do i no form
-                tag.MergeAttribute("href",paginaUrl(1));
+                tag.MergeAttribute("href",paginaUrl(i));
                 //Define um valor para a Tag Atual, No caso o valor que fica entro <>valor<> ex: <a href="paginaUrl">AQUI ENTRA O INNER<a>
                 tag.InnerHtml = i.ToString();
 

@@ -27,7 +27,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
             {
                 //Esta variavel recebera o resultado da query do BD, e sera retornada para a view
                 Produtos = _repositorio.Produtos
-                .Where(p => p.Categoria == null || p.Categoria == categoria)
+                .Where(p => categoria == null || p.Categoria == categoria)
                 .OrderBy(p => p.Descricao)
                 .Skip((pagina - 1) * ProdutosPorPagina)
                 .Take(ProdutosPorPagina),

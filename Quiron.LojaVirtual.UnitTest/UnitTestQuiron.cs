@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Web.Mvc;
+using Quiron.LojaVirtual.Dominio.Entidades;
 using Quiron.LojaVirtual.Web.Models;
 using Quiron.LojaVirtual.Web.HtmlHelpers;
 
@@ -26,7 +27,7 @@ namespace Quiron.LojaVirtual.UnitTest
         }
 
         [TestMethod]
-        public void testaPaginacao()
+        public void TestaPaginacao()
         {
 
             //Arrange ( Variaveus e atributos necessario para o Teste)
@@ -51,6 +52,6 @@ namespace Quiron.LojaVirtual.UnitTest
 
                             );
         }
-
+        
     }
 }

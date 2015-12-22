@@ -8,6 +8,7 @@
 
 @using (Html.BeginForm())
 {
+    //Cria os labels com os erros dos campos que sao Requireds
     @Html.ValidationSummary()
 
     <h3>Enviar para</h3>
@@ -15,6 +16,7 @@
     <div class="form-group">
         <label>Nome do cliente</label>
         @Html.TextBoxFor(x => x.NomeCliente, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x => x.NomeCliente)
     </div>
 
     <h3>Dados Entrega</h3>
@@ -22,17 +24,20 @@
     //Este foreach acessa a entidade Pedido e a partir das propriedades dela cria os campos e os Label
     foreach (var property in ViewData.ModelMetadata.Properties)
     {
-        if (property.PropertyName != "EmbrulhaPresente" && property.PropertyName != "NomeCliente")
+        if (property.PropertyName != "NomeCliente" && property.PropertyName != "EmbrulhaPresente")
         {
             <div class="form-group">
-                <label>@(property.DisplayName ?? property.PropertyName)</label>
+                <label>
+                    @(property.DisplayName ?? property.PropertyName)
+                </label>
+
                 @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+
             </div>
         }
-
     }
 
-   
+
     <h3>Opções</h3>
 
     <div class="checkbox">
@@ -46,7 +51,7 @@
     <input class="btn btn-primary" type="submit" value="Fechar o pedido" />
 }
 
-
+<link href="~/Content/ErroStylo.css" rel="stylesheet" />
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 
 <script>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -66,6 +67,11 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
                if (_emailConfiguracoes.EscreverArquivo)
                {
                    mailMessage.BodyEncoding = Encoding.GetEncoding("ISO-8859-1");
+               }
+
+               if (!Directory.Exists(_emailConfiguracoes.PastaArquivo))
+               {
+                   Directory.CreateDirectory(_emailConfiguracoes.PastaArquivo);
                }
 
                smtpClient.Send(mailMessage);

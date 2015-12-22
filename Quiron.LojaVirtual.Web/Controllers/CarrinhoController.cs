@@ -70,7 +70,11 @@ namespace Quiron.LojaVirtual.Web.Controllers
         }
 
 
+        public ViewResult FecharPedido()
+        {
 
+            return View(new Pedido());
+        }
 
     }
 }

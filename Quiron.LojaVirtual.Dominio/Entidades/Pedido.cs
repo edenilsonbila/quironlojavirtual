@@ -21,6 +21,12 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
         public string Endereco { get; set; }
 
         [Display(Name = "Cidade:")]
+        public string Cidade { get; set; }
+
+        [Display(Name = "Estado:")]
+        public string Estado { get; set; }
+
+        [Display(Name = "Complemento:")]
         public string Complemento { get; set; }
 
         [Display(Name = "Bairro:")]

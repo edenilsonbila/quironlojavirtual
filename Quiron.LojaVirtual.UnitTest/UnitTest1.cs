@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quiron.LojaVirtual.Dominio.Entidades;
+using Quiron.LojaVirtual.Dominio.Repositorio;
 
 namespace Quiron.LojaVirtual.UnitTest
 {
@@ -200,5 +202,8 @@ namespace Quiron.LojaVirtual.UnitTest
 
             Assert.AreEqual(carrinho.ItensCarrinho.Count(), 0);
         }
+
+      
+
     }
 }

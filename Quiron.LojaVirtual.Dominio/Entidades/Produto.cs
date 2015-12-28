@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 namespace Quiron.LojaVirtual.Dominio.Entidades
@@ -20,7 +21,11 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
         [Range(0.01,double.MaxValue, ErrorMessage = "Valor inválido")]
         public decimal Preco { get; set; }
 
+        [Required(ErrorMessage = "Digite uma categoria")]
         public string Categoria { get; set; }
 
+       public byte[] Imagem { get; set; }
+
+       public string ImagemMimeType { get; set; }
     }
 }

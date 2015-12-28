@@ -1,52 +1,88 @@
 ﻿@model Quiron.LojaVirtual.Dominio.Entidades.Produto
-
 @{
-    ViewBag.Title = "Alterar " + @Model.Nome;
+    ViewBag.Title = "Alterar  " + @Model.Nome;
     Layout = "~/Areas/Administrativo/Views/Shared/_AdministrativoLayout.cshtml";
 }
 
-
 <div class="panel">
-
     <div class="panel-heading">
-        <h3>Alterar - @Model.Nome</h3>
+        <h3>Alterar @Model.Nome</h3>
     </div>
 
-                      <!--  Método    COntroller -->
-    @using (Html.BeginForm("Alterar","Produto"))
+    @*Informar senão ao criar não irá achar*@
+    @using (Html.BeginForm("Alterar", "Produto", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <div class="panel-body">
-
             @Html.HiddenFor(m => m.ProdutoID)
-
             @foreach (var property in ViewData.ModelMetadata.Properties)
             {
+                // if (property.PropertyName != "ProdutoId")
+                //  {
 
-                if (property.PropertyName != "ProdutoID")
+            //Verifica o properti name e nao renderiza alguns componentes
+                switch (property.PropertyName)
                 {
-                    <div class="form-group">
-                        <label>
-                            @(property.DisplayName ?? property.PropertyName)
-                        </label>
+                    case "ProdutoId":
+                    case "Imagem":
+                    case "ImagemMimeType":
+                        break;
+
+                        //Por padrao renderiza os demais exceto os acima
+                    default:
 
 
-                        @if (property.PropertyName == "Descricao")
-                        {
-                            @Html.TextArea(property.PropertyName, null, new { @class = "form-control", rows = 5 })
-                        }
-                        else
-                        {
-                            @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                        <div class="form-group">
+                            <label>
+                                @(property.DisplayName ?? property.PropertyName)
+                            </label>
+                            @if (property.PropertyName == "Descricao")
+                            {
+                                @Html.TextArea(property.PropertyName, null, new { @class = "form-control", rows = 5 })
+                            }
+                            else
+                            {
+                                @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                            }
+                            @Html.ValidationMessage(property.PropertyName)
+                        </div>
 
-                        }
-
-                        @Html.ValidationMessage(property.PropertyName)
-
-                    </div>
-
+                        break;
                 }
             }
 
+
+            @*Upload*@
+            <div class="form-group">
+                <div style="position: relative;">
+
+                    <!-- Label Imagem-->
+
+                    <label>Imagem</label>
+                    <a class='btn' href='javascript:;'>
+
+                        Selecione a imagem...
+                        <!-- Botao selecionar imagem -->
+                        <input type="file" name="Image" size="40" style="position: absolute; z-index: 2; top: 0; left: 0; filter: alpha(opacity=0); opacity: 0; background-color: transparent; color: transparent;"
+                               onchange='$("#upload-file-info").html($(this).val());'>
+                        <!-- ^ Evento do Botao -->
+
+
+                    </a>
+                    <span class='label label-info' id="upload-file-info"></span>
+                </div>
+
+                <!-- Se o produto nao houver nenhuma imagem exibe a informação -->
+                @if (Model.Imagem == null)
+                {
+
+                    <div class="form-control-static">Nenhuma imagem</div>
+                }
+               // Se tiver imagem exibe a mesma
+                else
+                {
+                    <img class="img-thumbnail" width="120" height="120" src="@Url.Action("ObterImagem", "Produto", new { Model.ProdutoID })" />
+                }
+            </div>
         </div>
 
         <div class="panel-footer">
@@ -54,5 +90,4 @@
             @Html.ActionLink("Cancelar e retornar", "Index", null, new { @class = "btn btn-default" })
         </div>
     }
-
 </div>

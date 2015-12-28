@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Quiron.LojaVirtual.Dominio.Entidades
 {
-    class Administrador
+    public class Administrador
     {
         [Key]
         public int Id { get; set; }

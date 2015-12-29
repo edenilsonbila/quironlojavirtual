@@ -45,6 +45,8 @@ namespace Quiron.LojaVirtual.Web.Controllers
             return View(model);
         }
 
+
+        [Route("Vitrine/ObterImagem/{produtoId}")]
         //Busca a imagem e convert
         public FileContentResult ObterImagem(int produtoId)
         {

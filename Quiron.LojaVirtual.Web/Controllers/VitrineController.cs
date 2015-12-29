@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Quiron.LojaVirtual.Dominio.Entidades;
 using Quiron.LojaVirtual.Dominio.Repositorio;
 using Quiron.LojaVirtual.Web.Models;
 
@@ -43,5 +44,28 @@ namespace Quiron.LojaVirtual.Web.Controllers
 
             return View(model);
         }
+
+        //Busca a imagem e convert
+        public FileContentResult ObterImagem(int produtoId)
+        {
+            //Instancia o repositorio
+            _repositorio = new ProdutosRepositorio();
+
+            //Busca no banco de dados
+            Produto prod = _repositorio.Produtos
+                .FirstOrDefault(p => p.ProdutoID == produtoId);
+
+            //Verifica se retornou nulo, Se nao retorna a imagem
+            if (prod != null)
+            {
+                return File(prod.Imagem, prod.ImagemMimeType);
+            }
+
+            return null;
+        }
+
+
+
+
     }
 }

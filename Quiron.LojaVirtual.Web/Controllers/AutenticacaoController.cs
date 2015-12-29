@@ -62,6 +62,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
                     ModelState.AddModelError("","Administrador não existe");
                 }
             }
+            ViewBag.returnUrl = returnUrl;
             return View(new Administrador());
         }
     }

@@ -1,7 +1,16 @@
 ﻿@using Quiron.LojaVirtual.Dominio.Entidades
 @model Quiron.LojaVirtual.Dominio.Entidades.Produto
-    
+
 <div class="well">
+
+    @if (Model.Imagem != null)
+    {
+        <div class="pull-left">
+            @*<img class="img-rounded" width="120" height="120" src="@Url.Action("ObterImagem", "Vitrine",new { Model.ProdutoID })"/>*@
+            <img class="img-rounded" width="120" height="120" src="/Vitrine/ObterImagem/@Model.ProdutoID"/>
+        </div>
+    }
+
     <h3>
         <strong>@Model.Nome</strong>
     </h3>
@@ -11,7 +20,7 @@
     {
         <div class="pull-right">
             @Html.HiddenFor(x => x.ProdutoID)
-            @Html.Hidden("returnUrl",Request.Url.PathAndQuery)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
             <input type="submit" class="btn btn-success" value="Comprar"/>
         </div>
     }

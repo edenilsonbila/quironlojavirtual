@@ -23,7 +23,7 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
            else
            {
                 //Caso contrario acrescenta mais um na quantidade
-               item.Quantidade += quantidade;
+               item.Quantidade = quantidade;
            }
        }
 

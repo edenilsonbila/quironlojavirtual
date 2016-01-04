@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Optimization;
 using System.Web.Routing;
 using Quiron.LojaVirtual.Dominio.Entidades;
 using Quiron.LojaVirtual.Web.Infraestrutura;
@@ -18,6 +19,8 @@ namespace Quiron.LojaVirtual.Web
 
             //Mapeia o Model Binder Carrinho
             ModelBinders.Binders.Add(typeof(Carrinho), new CarrinhoModelBinder());
+
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }

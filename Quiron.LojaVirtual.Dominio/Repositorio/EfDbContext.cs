@@ -18,6 +18,8 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         //Mapeia a classe de Entidade produtos para ser usada com o Banco de Dados e o Entity
        public DbSet<Produto> Produtos { get; set; }
 
+        public DbSet<Categoria> Categorias { get; set; }
+
        public DbSet<Administrador> Administradores { get; set; }
 
         //Desabilita a Pluralização de Tabelas do BD

@@ -15,11 +15,17 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
 
         public IEnumerable<Produto> Produtos {
             get { return _context.Produtos; }
-        } 
+        }
 
-        //Salvar Produto - Alterar Produto
+        public Produto ObterProduto(int id)
+       {
+           return _context.Produtos.Single(p => p.ProdutoID == id);
+      }
 
-        public void Salvar(Produto produto)
+
+    //Salvar Produto - Alterar Produto
+
+    public void Salvar(Produto produto)
         {
             if (produto.ProdutoID == 0)
             {

@@ -22,6 +22,8 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
 
        public DbSet<Administrador> Administradores { get; set; }
 
+        public DbSet<MarcaVitrine> MarcaVitrine { get; set; }
+
         //Desabilita a Pluralização de Tabelas do BD
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

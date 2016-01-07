@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Quiron.LojaVirtual.Dominio.Entidades;
+using Quiron.LojaVirtual.Dominio.Entidades.Vitrine;
 
 namespace Quiron.LojaVirtual.Dominio.Repositorio
 {
@@ -20,6 +21,16 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         public IEnumerable<MarcaVitrine> ObterMarcas()
         {
             return _context.MarcaVitrine.OrderBy(c => c.MarcaDescricao);
+        }
+
+        public IEnumerable<ClubesNacionais> ObterClubesNacionais()
+        {
+            return _context.ClubesNacionais.OrderBy(c => c.LinhaDescricao);
+        }
+
+        public IEnumerable<ClubesInternacionais> ObterClubesInternacionais()
+        {
+            return _context.ClubesInternacionais.OrderBy(c => c.LinhaDescricao);
         }
     }
 }

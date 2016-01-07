@@ -33,7 +33,7 @@ app.ObterInternacionais = function () {
 
     $.getJSON('/menu/obterclubesinternacionais', function (data) {
         $(data).each(function () {
-            $("#clubesinternacionais").append("<li><a href='/nav/times/" + this.ClubeCodigo + "/" + this.ClubeSeo + "'>" + this.Clube + "</a></li>");
+            $("#clubesinternacionais").append("<li><a href='/nav/times/" + this.LinhaCodigo + "/" + this.LinhaDescricaoSeo + "'>" + this.LinhaDescricao + "</a></li>");
         });
     });
 };

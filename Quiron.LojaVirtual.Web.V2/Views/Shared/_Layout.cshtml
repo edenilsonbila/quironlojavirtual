@@ -1,20 +1,28 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
     <meta charset="utf-8">
     <!-- Title here -->
+    <title>Title - Quiron</title>
     <!-- Description, Keywords and Author -->
-    <title>@ViewBag.Title</title>
-    <meta name="description" content="@ViewBag.MetaDescription" />
-    <meta name="keywords" content="@ViewBag.MetaKeywords" />
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your,Keywords">
+    <meta name="author" content="ResponsiveWebInc">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Styles -->
     @Styles.Render("~/css")
     @Styles.Render("~/Content/startmenu")
-    <!-- Favicon -->
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#">
 </head>
+
 <body>
+
+
+
 
 
 
@@ -27,6 +35,7 @@
                     <h4 class="modal-title">Shopping Cart</h4>
                 </div>
                 <div class="modal-body">
+
                     <!-- Items table -->
                     <table class="table table-striped">
                         <thead>
@@ -59,6 +68,7 @@
                             </tr>
                         </tbody>
                     </table>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Continue Shopping</button>
@@ -68,6 +78,7 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
     <!-- Logo & Navigation starts -->
+
     <div class="header">
         <div class="container">
             <div class="row">
@@ -77,36 +88,41 @@
                         <h1> @Html.ActionLink("Quiron", "Index") </h1>
                     </div>
                 </div>
+
                 <div class="col-md-10 col-sm-10">
                     <div class="kart-links">
                         <a href="Login.html">Seja bem-vindo(a)!  Faça seu login </a>
+
                         <a href="login.html">Meu cadastro</a>
                         <a href="register.html">Meus pedidos</a>
                         <a data-toggle="modal" href="#shoppingcart"><i class="fa fa-shopping-cart"></i> 3 itens - R$ 300,00</a>
                     </div>
                 </div>
+
             </div>
+
             <div class="row">
+
                 <div class="col-md-12 col-sm-12">
                     @Html.Partial("_Menu")
                 </div>
 
+
             </div>
         </div>
     </div>
+
     <!-- Logo & Navigation ends -->
     <!-- Page title -->
     <div class="page-title">
         <div class="container">
-            <h2>
-                <i class="fa fa-shopping-cart color"></i> Pensou em esportes, pense Quiron <small>Seu esporte está aqui.</small>
-            </h2>
-
+            <h2><i class="fa fa-shopping-cart color"></i> Falou em esportes, pense Quiron <small>Seu esporte é aqui</small></h2>
             <hr />
         </div>
     </div>
     <!-- Page title -->
     <!-- Page content -->
+
     <div class="page-content blocky">
         <div class="container">
             @RenderBody()
@@ -115,13 +131,156 @@
 
 
 
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            @Html.Partial("_Marcas")
+        </div>
+    </div>
+
+
+    <!-- Recent posts Starts -->
+
+    <div class="recent-posts blocky">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Section title -->
+                    <div class="section-title">
+                        <h4><i class="fa fa-credit-card color"></i> &nbsp;Promoções</h4>
+                    </div>
+
+                    <div id="item-carousel" class="carousel slide" data-ride="carousel">
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6">
+                                        <!-- single item -->
+                                        <div class="s-item">
+                                            <!-- Image link -->
+                                            <a href="single-item.html">
+                                                <img src="http://images.centauro.com.br/180x180/816584QKA1.jpg" class="img-responsive" alt="" />
+                                            </a>
+                                            <!-- portfolio caption -->
+                                            <div class="s-caption">
+                                                <!-- heading and paragraph -->
+                                                <h4><a href="#">Finibus Bonorum</a></h4>
+                                                <p>Clintock, a Lat Hampden-Sydney College in Virginia.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="s-item">
+                                            <a href="single-item.html">
+                                                <img src="http://images.centauro.com.br/180x180/84531204A1.jpg" class="img-responsive" alt="" />
+                                            </a>
+                                            <div class="s-caption">
+                                                <h4><a href="#">Finibus Bonorum</a></h4>
+                                                <p>Clintock, a Lat Hampden-Sydney College in Virginia.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="s-item">
+                                            <a href="single-item.html">
+                                                <img src="http://images.centauro.com.br/180x180/83285531A1.jpg" class="img-responsive" alt="" />
+                                            </a>
+                                            <div class="s-caption">
+                                                <h4><a href="#">Finibus Bonorum</a></h4>
+                                                <p>Clintock, a Lat Hampden-Sydney College in Virginia.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="s-item">
+                                            <a href="single-item.html">
+                                                <img src="http://images.centauro.com.br/180x180/83312706.jpg" class="img-responsive" alt="" />
+                                            </a>
+                                            <div class="s-caption">
+                                                <h4><a href="#">Finibus Bonorum</a></h4>
+                                                <p>Clintock, a Lat Hampden-Sydney College in Virginia.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="s-item">
+                                            <a href="single-item.html">
+                                                <img src="http://images.centauro.com.br/180x180/82138641.jpg" class="img-responsive" alt="" />
+                                            </a>
+                                            <div class="s-caption">
+                                                <h4><a href="#">Finibus Bonorum</a></h4>
+                                                <p>Clintock, a Lat Hampden-Sydney College in Virginia.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="s-item">
+                                            <a href="single-item.html">
+                                                <img src="http://images.centauro.com.br/180x180/85633431A1.jpg" class="img-responsive" alt="" />
+                                            </a>
+                                            <div class="s-caption">
+                                                <h4><a href="#">Finibus Bonorum</a></h4>
+                                                <p>Clintock, a Lat Hampden-Sydney College in Virginia.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="s-item">
+                                            <a href="single-item.html">
+                                                <img src="http://images.centauro.com.br/180x180/83216131A1.jpg" class="img-responsive" alt="" />
+                                            </a>
+                                            <div class="s-caption">
+                                                <h4><a href="#">Finibus Bonorum</a></h4>
+                                                <p>Clintock, a Lat Hampden-Sydney College in Virginia.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="s-item">
+                                            <a href="single-item.html">
+                                                <img src="http://images.centauro.com.br/180x180/83302731A1.jpg" class="img-responsive" alt="" />
+                                            </a>
+                                            <div class="s-caption">
+                                                <h4><a href="#">Finibus Bonorum</a></h4>
+                                                <p>Clintock, a Lat Hampden-Sydney College in Virginia.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left c-control" href="#item-carousel" data-slide="prev">
+                            <i class="fa fa-chevron-left"></i>
+                        </a>
+                        <a class="right c-control" href="#item-carousel" data-slide="next">
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Footer starts -->
     <footer>
         <div class="container">
+
             <div class="row">
+
                 <div class="col-md-4 col-sm-4">
                     <div class="fwidget">
+
                         <h4>Oslon de<span class="color">'</span> Techno</h4>
                         <hr />
                         <p>Duis leo risus, vehicula luctus nunc.  Quiue rhoncus, a sodales enim arcu quis turpis. Duis leo risus, condimentum ut posuere ac, vehicula luctus nunc.  Quisque rhoncus, a sodales enim arcu quis turpis.</p>
@@ -147,7 +306,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-md-4 col-sm-4">
                     <div class="fwidget">
                         <h4>Get In Touch</h4>
@@ -162,7 +320,6 @@
                     </div>
                 </div>
             </div>
-
             <hr />
             <div class="copy text-center">
                 Copyright 2013 &copy; - <a href="http://responsivewebinc.com/bootstrap-themes">Bootstrap Themes</a>
@@ -172,12 +329,9 @@
     <!-- Footer ends -->
     <!-- Scroll to top -->
     <span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span>
-
-
     <!-- Javascript files -->
     @Scripts.Render("~/js")
     @Scripts.Render("~/Scripts/startmenu")
     @Scripts.Render("~/Scripts/jsprojetos")
-
 </body>
 </html>

@@ -32,5 +32,16 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         {
             return _context.ClubesInternacionais.OrderBy(c => c.LinhaDescricao);
         }
+
+        public IEnumerable<Genero> ObterGeneros()
+        {
+            return _context.Generos.OrderBy(g => g.GeneroDescricao);
+        }
+
+        public IEnumerable<Grupo> ObterGrupos()
+        {
+            return _context.Grupos.OrderBy(g => g.GrupoDescricao);
+        }
+
     }
 }

@@ -15,8 +15,8 @@ namespace Quiron.LojaVirtual.Web.V2.Controllers
             return View();
         }
 
-        [Route("nav/{id}/{marca}")]
-        public ActionResult ObterProdutosPorMarcas(string id)
+        [Route("nav/{categoria}/{id}/{marca}")]
+        public ActionResult ObterProdutosPorMarcas(string categoria, string id, string marca)
         {
             var model = new ProdutosViewModel {Produtos = null};
 
